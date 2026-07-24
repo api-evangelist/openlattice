@@ -1,0 +1,169 @@
+openapi: 3.0.0
+info:
+  description: OpenLattice API
+  version: 0.0.1
+  title: OpenLattice authorizations data API
+  termsOfService: http://api.openlattice.com/terms/
+  contact:
+    email: support@openlattice.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://api.openlattice.com
+  description: Production OpenLattice API
+- url: https://api.staging.openlattice.com
+  description: Staging OpenLattice API
+- url: http://localhost:8080
+  description: Local OpenLattice API
+tags:
+- name: data
+  description: API endpoints to reading and writing data.
+paths:
+  /datastore/data/set/{entitySetId}:
+    get:
+      summary: Gets an iterable containing the entity data, using property type FQNs as key
+      operationId: loadEntitySetData
+      parameters:
+      - name: entitySetId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      tags:
+      - data
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      responses:
+        '200':
+          description: An Entity Set definition
+          content:
+            application/json:
+              schema:
+                type: list
+                items:
+                  type: object
+                  additionalProperties:
+                    type: array
+                    items:
+                      type: string
+    post:
+      summary: Gets a list of entities by UUID's
+      operationId: loadFilteredEntitySetData
+      parameters:
+      - name: entitySetId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/entitySetSelection'
+      tags:
+      - data
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      responses:
+        '200':
+          description: A list of entity keys that were generated
+          content:
+            application/json:
+              schema:
+                type: list
+                items:
+                  type: object
+                  additionalProperties:
+                    type: array
+                    items:
+                      type: string
+    delete:
+      summary: Clears the data from a single entity set.
+      operationId: clearEntitySet
+      parameters:
+      - name: entitySetId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      tags:
+      - data
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      responses:
+        '200':
+          description: Success
+  /datastore/data/set/{entitySetId}/all:
+    delete:
+      summary: Clears the Entity matching the given Entity id and all of its neighbor Entities
+      operationId: deleteAllEntitiesFromEntitySet
+      parameters:
+      - name: entitySetId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: type
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - Soft
+          - Hard
+      tags:
+      - data
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      responses:
+        '200':
+          description: Success
+  /datastore/data/{entitySetId}/count:
+    get:
+      summary: Gets the number of entities in an entity set.
+      operationId: getEntitySetSize
+      parameters:
+      - name: entitySetId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      tags:
+      - data
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      responses:
+        '200':
+          description: The number of entities in an entity set.
+          content:
+            application/json:
+              schema:
+                type: integer
+components:
+  securitySchemes:
+    http_auth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      name: HttpAuthorization
+    openlattice_auth:
+      type: apiKey
+      in: header
+      name: Authorization
+externalDocs:
+  description: Find out more about OpenLattice
+  url: https://openlattice.com/

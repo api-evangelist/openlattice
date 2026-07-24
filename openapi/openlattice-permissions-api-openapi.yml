@@ -1,0 +1,77 @@
+openapi: 3.0.0
+info:
+  description: OpenLattice API
+  version: 0.0.1
+  title: OpenLattice authorizations permissions API
+  termsOfService: http://api.openlattice.com/terms/
+  contact:
+    email: support@openlattice.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://api.openlattice.com
+  description: Production OpenLattice API
+- url: https://api.staging.openlattice.com
+  description: Staging OpenLattice API
+- url: http://localhost:8080
+  description: Local OpenLattice API
+tags:
+- name: permissions
+  description: API endpoints for permissions for organisations, roles and users.
+paths:
+  /datastore/permissions:
+    post:
+      summary: Get the ACL for the given ACL Key, only if the user is the owner of the ACL Key.
+      operationId: getAcl
+      tags:
+      - permissions
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/acl'
+    patch:
+      summary: Updates the ACL for a particular ACL Key, only if the user is the owner of the ACL Key.
+      operationId: updateAcl
+      tags:
+      - permissions
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/aclData'
+      responses:
+        '200':
+          description: Success
+components:
+  securitySchemes:
+    http_auth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      name: HttpAuthorization
+    openlattice_auth:
+      type: apiKey
+      in: header
+      name: Authorization
+externalDocs:
+  description: Find out more about OpenLattice
+  url: https://openlattice.com/

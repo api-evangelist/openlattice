@@ -1,0 +1,135 @@
+openapi: 3.0.0
+info:
+  description: OpenLattice API
+  version: 0.0.1
+  title: OpenLattice authorizations search API
+  termsOfService: http://api.openlattice.com/terms/
+  contact:
+    email: support@openlattice.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://api.openlattice.com
+  description: Production OpenLattice API
+- url: https://api.staging.openlattice.com
+  description: Staging OpenLattice API
+- url: http://localhost:8080
+  description: Local OpenLattice API
+tags:
+- name: search
+  description: API endpoints to search data.
+paths:
+  /datastore/search/{entitySetId}/{entityKeyId}:
+    get:
+      summary: Executes a search for all neighbors of an entity that are connected by an association
+      operationId: executeEntityNeighborSearch
+      parameters:
+      - name: entitySetId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: entityKeyId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      tags:
+      - search
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      responses:
+        '200':
+          description: A list of objects containing information about the neighbor and association.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/neighborEntityDetails'
+  /datastore/search/{entitySetId}/neighbors/advanced:
+    post:
+      summary: Executes a search for all neighbors of multiple entities of the same entity set that are connected by an association
+      operationId: executeFilteredEntityNeighborSearch
+      parameters:
+      - name: entitySetId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/neighborSearchFilter'
+      tags:
+      - search
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      responses:
+        '200':
+          description: A list of objects containing information about the neighbor and association.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/neighborEntityDetails'
+  /datastore/search/{entitySetId}/neighbors/advanced/ids:
+    post:
+      summary: Executes a search for all neighbors of multiple entities of the same entity set that are connected by an association and returns a simple version of the neighborDetails
+      operationId: executeFilteredEntityNeighborIdSearch
+      parameters:
+      - name: entitySetId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/neighborSearchFilter'
+      tags:
+      - search
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      responses:
+        '200':
+          description: A list of objects containing information about the neighbor and association.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+                  additionalProperties:
+                    type: array
+                    items:
+                      $ref: '#/components/neighborEntityDetailsReduced'
+components:
+  securitySchemes:
+    http_auth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      name: HttpAuthorization
+    openlattice_auth:
+      type: apiKey
+      in: header
+      name: Authorization
+externalDocs:
+  description: Find out more about OpenLattice
+  url: https://openlattice.com/

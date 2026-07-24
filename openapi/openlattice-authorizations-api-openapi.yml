@@ -1,0 +1,108 @@
+openapi: 3.0.0
+info:
+  description: OpenLattice API
+  version: 0.0.1
+  title: OpenLattice authorizations API
+  termsOfService: http://api.openlattice.com/terms/
+  contact:
+    email: support@openlattice.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://api.openlattice.com
+  description: Production OpenLattice API
+- url: https://api.staging.openlattice.com
+  description: Staging OpenLattice API
+- url: http://localhost:8080
+  description: Local OpenLattice API
+tags:
+- name: authorizations
+paths:
+  /datastore/authorizations:
+    post:
+      summary: Check authorizations
+      operationId: checkAuthorizations
+      tags:
+      - authorizations
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/AccessCheck'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/Authorization'
+    get:
+      summary: Returns paged results for all authorized objects of specified objectType, that the current user has specified permission for.
+      operationId: getAccessibleObjects
+      tags:
+      - authorizations
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      parameters:
+      - name: objectType
+        in: query
+        schema:
+          type: string
+          enum:
+          - EntityType
+          - EntitySet
+          - PropertyTypeInEntitySet
+          - Datasource
+          - ComplexType
+          - LinkingEntityType
+          - AssociationType
+          - Organization
+          - App
+          - AppType
+          - Principal
+          - Role
+          - UnknownEdmTemplate
+      - name: permission
+        in: query
+        schema:
+          type: string
+          enum:
+          - DISCOVER
+          - MATERIALIZE
+          - LINK
+          - READ
+          - WRITE
+          - OWNER
+      - name: pagingToken
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/AuthorizedObjectsSearchResult'
+components:
+  securitySchemes:
+    http_auth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      name: HttpAuthorization
+    openlattice_auth:
+      type: apiKey
+      in: header
+      name: Authorization
+externalDocs:
+  description: Find out more about OpenLattice
+  url: https://openlattice.com/

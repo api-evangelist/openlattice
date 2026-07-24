@@ -1,0 +1,131 @@
+openapi: 3.0.0
+info:
+  description: OpenLattice API
+  version: 0.0.1
+  title: OpenLattice authorizations principal API
+  termsOfService: http://api.openlattice.com/terms/
+  contact:
+    email: support@openlattice.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://api.openlattice.com
+  description: Production OpenLattice API
+- url: https://api.staging.openlattice.com
+  description: Staging OpenLattice API
+- url: http://localhost:8080
+  description: Local OpenLattice API
+tags:
+- name: principal
+paths:
+  /datastore/principals/users/search/email/"{emailAddress}":
+    get:
+      summary: Get the user id for the given email address.
+      operationId: searchAllUsersByEmail
+      tags:
+      - principal
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      parameters:
+      - name: emailAddress
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  $ref: '#/components/auth0userBasic'
+  /datastore/principals/users/{userId}:
+    get:
+      summary: Get the user for the given id.
+      operationId: getUser
+      tags:
+      - principal
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/auth0userBasic'
+  /datastore/principals/db:
+    get:
+      summary: Get the db access credentials.
+      operationId: getDbAccessCredentials
+      tags:
+      - principal
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+  /datastore/principals/users/:
+    get:
+      summary: Get all users.
+      operationId: getAllUsers
+      tags:
+      - principal
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  $ref: '#/components/auth0userBasic'
+  /datastore/principals/roles/current/:
+    get:
+      summary: Get current roles.
+      operationId: getCurrentRoles
+      tags:
+      - principal
+      security:
+      - openlattice_auth: []
+      - http_auth: []
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/securablePrincipal'
+components:
+  securitySchemes:
+    http_auth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      name: HttpAuthorization
+    openlattice_auth:
+      type: apiKey
+      in: header
+      name: Authorization
+externalDocs:
+  description: Find out more about OpenLattice
+  url: https://openlattice.com/
