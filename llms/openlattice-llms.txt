@@ -1,0 +1,36 @@
+# OpenLattice
+
+> OpenLattice was a data-integration and analytics platform built around an Entity Data Model (EDM): a graph of entity types, property types, association types, and EntitySets, with a fine-grained ACL/permissions model over organizations, roles, and principals. It was used heavily by public-sector and criminal-justice programs (reentry case management, community work programs, childcare, courts). The company's hosted service and website (openlattice.com, api.openlattice.com) no longer resolve, but its OpenAPI, SDKs, and UI kit remain published on GitHub.
+
+## Status
+- Website openlattice.com: does not resolve (archived company).
+- Hosted API api.openlattice.com: does not resolve.
+- Source, spec, and packages remain public under github.com/openlattice.
+
+## API
+- OpenAPI 3.0.0 spec: openapi/openlattice-openapi.yaml (title "OpenLattice API", 60 paths, 91 operations).
+- Documented servers: https://api.openlattice.com (production), https://api.staging.openlattice.com (staging).
+- Auth: HTTP bearer JWT and an apiKey Authorization header. See authentication/openlattice-authentication.yml.
+- Operation groups (tags): edm, data, search, organizations, permissions, authorizations, principal/directory.
+
+## Core concepts (data model)
+- Entity Data Model (EDM): schemas, entityTypes, propertyTypes, associationTypes.
+- EntitySets: named, UUID-keyed collections that hold entity data.
+- Graph search: neighbor searches traverse associations between EntitySets.
+- Access control: organizations, roles, principals, and ACLs (ACEs binding principals to permissions).
+- See data-model/openlattice-data-model.yml.
+
+## SDKs and packages
+- lattice-js (npm): JavaScript SDK for all OpenLattice REST APIs.
+- OpenAPI-generated clients for Python, R, Go, Ruby, Android, JavaScript in github.com/openlattice/api-clients.
+- Helper libraries (npm): lattice-auth, lattice-sagas, lattice-utils, redux-reqseq.
+- UI: lattice-ui-kit, lattice-fabricate (React). See packages/openlattice-packages.yml and components/openlattice-components.yml.
+
+## Agent surface
+- Candidate MCP tool list (derived from the 91 operations): mcp/openlattice-mcp.yml.
+- Agent Skills: skills/explore-entity-data-model.md, skills/search-entity-neighbors.md, skills/manage-organization-permissions.md.
+
+## Source
+- API spec + object models: https://github.com/openlattice/api
+- Generated clients: https://github.com/openlattice/api-clients
+- GitHub org (87 repos): https://github.com/openlattice

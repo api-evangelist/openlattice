@@ -1,0 +1,43 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/openlattice-openapi.yaml
+notes: >-
+  Cross-cutting API semantics derived from the OpenLattice OpenAPI (openlattice.yaml).
+  The spec is terse (responses only document 200), so several conventions are
+  inferred from parameter/scheme evidence rather than prose. No idempotency,
+  rate-limit, or deprecation signaling is present in the spec.
+authentication:
+  styles:
+  - type: http
+    scheme: bearer
+    format: JWT
+    header: Authorization
+  - type: apiKey
+    in: header
+    name: Authorization
+  see: authentication/openlattice-authentication.yml
+pagination:
+  style: token
+  evidence: "'pagingToken' query parameter on search/paged endpoints"
+  params:
+  - pagingToken
+idempotency:
+  supported: false
+  evidence: no Idempotency-Key header or idempotency semantics documented in the spec
+versioning:
+  style: entity-data-model-version
+  evidence: "GET /datastore/edm/version returns the current Entity Data Model version; spec info.version 0.0.1"
+  spec_version: 0.0.1
+error_envelope:
+  documented: false
+  evidence: "spec documents only 200 responses; no error schema or problem+json envelope present"
+request_tracing:
+  documented: false
+rate_limiting:
+  signaled: false
+identifiers:
+  style: uuid
+  evidence: "resources keyed by UUID path params (entitySetId, entityTypeId, propertyTypeId, organizationId, roleId, entityKeyId)"
+cross_links:
+  authentication: authentication/openlattice-authentication.yml
+  data_model: data-model/openlattice-data-model.yml

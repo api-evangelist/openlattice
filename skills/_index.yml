@@ -1,0 +1,18 @@
+generated: '2026-07-20'
+method: generated
+source: openapi/openlattice-openapi.yaml
+api: OpenLattice API
+notes: >-
+  Agent Skills packaging marquee OpenLattice flows, each grounded in real
+  operationIds from openlattice.yaml. No provider-published skills/AGENTS.md
+  exist (company defunct); these are generated from the spec.
+skills:
+- name: explore-entity-data-model
+  file: explore-entity-data-model.md
+  operations: [getEntityDataModel, getEntityDataModelVersion, getAllEntitySets, getEntitySetId, getEntitySet]
+- name: search-entity-neighbors
+  file: search-entity-neighbors.md
+  operations: [getEntitySetId, executeEntityNeighborSearch, executeFilteredEntityNeighborSearch, executeFilteredEntityNeighborIdSearch]
+- name: manage-organization-permissions
+  file: manage-organization-permissions.md
+  operations: [getOrganizations, createOrganizationIfNotExists, getOrganization, getOrganizationEntitySets, getAcl, updateAcl]

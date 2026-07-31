@@ -1,0 +1,16 @@
+generated: '2026-07-20'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: openlattice.com
+  https: false
+- host: api.openlattice.com
+  https: false
+- host: api.staging.openlattice.com
+  https: false
+domains:
+- domain: openlattice.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: false

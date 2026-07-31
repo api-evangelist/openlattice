@@ -1,0 +1,291 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/openlattice-openapi.yaml
+notes: 'Entity-relationship graph derived from OpenLattice OpenAPI component schemas ($ref links). OpenLattice
+  is an Entity Data Model (EDM) platform: the graph is centered on the EDM (schemas/entityTypes/propertyTypes/associationTypes),
+  EntitySets that hold data, and an ACL/principal permissions model over them.'
+entity_count: 28
+entities:
+- name: fullQualifiedName
+  fields:
+  - name
+  - namespace
+- name: propertyType
+  fields:
+  - title
+  - id
+  - type
+  - description
+  - schemas
+  - datatype
+  - piiField
+  - multiValued
+  - analyzer
+  relationships:
+  - type: has_one
+    target: fullQualifiedName
+    via: type
+  - type: has_many
+    target: fullQualifiedName
+    via: schemas
+- name: entityType
+  fields:
+  - title
+  - description
+  - id
+  - type
+  - schemas
+  - key
+  - properties
+  - propertyTags
+  - basetype
+  - category
+  relationships:
+  - type: has_one
+    target: fullQualifiedName
+    via: type
+  - type: has_many
+    target: fullQualifiedName
+    via: schemas
+- name: associationType
+  fields:
+  - entityType
+  - src
+  - dst
+  - bidirectional
+  relationships:
+  - type: has_one
+    target: entityType
+    via: entityType
+- name: schema
+  fields:
+  - entityTypes
+  - propertyTypes
+  - fqn
+  relationships:
+  - type: has_many
+    target: entityType
+    via: entityTypes
+  - type: has_many
+    target: propertyType
+    via: propertyTypes
+  - type: has_one
+    target: fullQualifiedName
+    via: fqn
+- name: EDM
+  fields:
+  - version
+  - namespaces
+  - schemas
+  - propertyTypes
+  - entityTypes
+  - associationTypes
+  relationships:
+  - type: has_many
+    target: schema
+    via: schemas
+  - type: has_many
+    target: propertyType
+    via: propertyTypes
+  - type: has_many
+    target: entityType
+    via: entityTypes
+  - type: has_many
+    target: associationType
+    via: associationTypes
+- name: EDMdiff
+  fields:
+  - conflicts
+  - diff
+  relationships:
+  - type: has_one
+    target: EDM
+    via: conflicts
+  - type: has_one
+    target: EDM
+    via: diff
+- name: metaDataUpdate
+  fields:
+  - name
+  - title
+  - contacts
+  - description
+  - type
+  - linking
+  - linked_entity_sets
+  - external
+  - pii
+  - defaultShow
+  - propertyTags
+  - organizationId
+  relationships:
+  - type: has_one
+    target: fullQualifiedName
+    via: type
+- name: propertyUsageSummary
+  fields:
+  - entityTypeId
+  - entitySetId
+  - entitySetName
+  - count
+- name: EdmRequest
+  fields:
+  - action
+  - propertyTypes
+  - entityTypes
+- name: entitySet
+  fields:
+  - name
+  - id
+  - title
+  - contacts
+  - entityTypeId
+  - description
+  - linking
+  - linked_entity_sets
+  - external
+  - organizationId
+- name: neighborDetails
+  fields:
+  - openlattice.@id
+  - ol.id
+- name: neighborEntityDetails
+  fields:
+  - associationEntitySet
+  - associationDetails
+  - neighborEntitySet
+  - neighborId
+  - neighbourDetails
+  relationships:
+  - type: has_one
+    target: entitySet
+    via: associationEntitySet
+  - type: has_one
+    target: neighborDetails
+    via: associationDetails
+  - type: has_one
+    target: entitySet
+    via: neighborEntitySet
+  - type: has_one
+    target: neighborDetails
+    via: neighbourDetails
+- name: neighborEntityIds
+  fields:
+  - associationId
+  - neighborId
+  - src
+- name: neighborSearchFilter
+  fields:
+  - entityKeyIds
+  - src
+  - dst
+  - edge
+- name: auth0userBasic
+  fields:
+  - user_id
+  - email
+  - nickname
+  - username
+  - roles
+  - com/openlattice/organization
+- name: ace
+  fields:
+  - principal
+  - permissions
+  relationships:
+  - type: has_one
+    target: principal
+    via: principal
+- name: acl
+  fields:
+  - aclKey
+  - aces
+  relationships:
+  - type: has_many
+    target: ace
+    via: aces
+- name: aclData
+  fields:
+  - action
+  - acl
+  relationships:
+  - type: has_one
+    target: acl
+    via: acl
+- name: principal
+  fields:
+  - type
+  - id
+- name: securablePrincipal
+  fields:
+  - id
+  - principal
+  - title
+  - description
+  relationships:
+  - type: has_one
+    target: principal
+    via: principal
+- name: role
+  fields:
+  - id
+  - organizationId
+  - principal
+  - title
+  - description
+  - '@class'
+  relationships:
+  - type: has_one
+    target: principal
+    via: principal
+- name: organization
+  fields:
+  - id
+  - principal
+  - title
+  - description
+  - emails
+  - members
+  - roles
+  - apps
+  relationships:
+  - type: has_one
+    target: principal
+    via: principal
+  - type: has_many
+    target: principal
+    via: members
+  - type: has_many
+    target: role
+    via: roles
+- name: entitySetSelection
+  fields:
+  - ids
+  - properties
+- name: organizationMember
+  fields:
+  - principal
+  - profile
+  - roles
+  relationships:
+  - type: has_one
+    target: securablePrincipal
+    via: principal
+  - type: has_one
+    target: auth0userBasic
+    via: profile
+  - type: has_many
+    target: securablePrincipal
+    via: roles
+- name: AccessCheck
+  fields:
+  - aclKey
+  - permissions
+- name: Authorization
+  fields:
+  - aclKey
+  - permissions
+- name: AuthorizedObjectsSearchResult
+  fields:
+  - pagingToken
+  - authorizedObjects

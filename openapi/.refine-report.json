@@ -1,0 +1,52 @@
+{
+  "provider": "openlattice",
+  "sources": [
+    "openlattice-authorizations-api-openapi.yml",
+    "openlattice-data-api-openapi.yml",
+    "openlattice-edm-api-openapi.yml",
+    "openlattice-organizations-api-openapi.yml",
+    "openlattice-permissions-api-openapi.yml",
+    "openlattice-principal-api-openapi.yml",
+    "openlattice-search-api-openapi.yml"
+  ],
+  "outputs": [
+    "openlattice-authorizations-api-openapi.yml",
+    "openlattice-data-api-openapi.yml",
+    "openlattice-edm-api-openapi.yml",
+    "openlattice-organizations-api-openapi.yml",
+    "openlattice-permissions-api-openapi.yml",
+    "openlattice-principal-api-openapi.yml",
+    "openlattice-search-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [
+    "openlattice-authorizations-api-openapi.yml: dangling $ref: #/components/AccessCheck",
+    "openlattice-authorizations-api-openapi.yml: dangling $ref: #/components/Authorization",
+    "openlattice-authorizations-api-openapi.yml: dangling $ref: #/components/AuthorizedObjectsSearchResult",
+    "openlattice-data-api-openapi.yml: dangling $ref: #/components/entitySetSelection",
+    "openlattice-edm-api-openapi.yml: dangling $ref: #/components/EDM",
+    "openlattice-edm-api-openapi.yml: dangling $ref: #/components/EDMdiff",
+    "openlattice-edm-api-openapi.yml: dangling $ref: #/components/EdmRequest",
+    "openlattice-edm-api-openapi.yml: dangling $ref: #/components/associationType",
+    "openlattice-edm-api-openapi.yml: dangling $ref: #/components/entitySet",
+    "openlattice-edm-api-openapi.yml: dangling $ref: #/components/entityType",
+    "openlattice-edm-api-openapi.yml: dangling $ref: #/components/metaDataUpdate",
+    "openlattice-edm-api-openapi.yml: dangling $ref: #/components/propertyType",
+    "openlattice-edm-api-openapi.yml: dangling $ref: #/components/propertyUsageSummary",
+    "openlattice-edm-api-openapi.yml: dangling $ref: #/components/schema",
+    "openlattice-organizations-api-openapi.yml: dangling $ref: #/components/auth0userBasic",
+    "openlattice-organizations-api-openapi.yml: dangling $ref: #/components/organization",
+    "openlattice-organizations-api-openapi.yml: dangling $ref: #/components/organizationMember",
+    "openlattice-organizations-api-openapi.yml: dangling $ref: #/components/role",
+    "openlattice-permissions-api-openapi.yml: dangling $ref: #/components/acl",
+    "openlattice-permissions-api-openapi.yml: dangling $ref: #/components/aclData",
+    "openlattice-principal-api-openapi.yml: dangling $ref: #/components/auth0userBasic",
+    "openlattice-principal-api-openapi.yml: dangling $ref: #/components/securablePrincipal",
+    "openlattice-search-api-openapi.yml: dangling $ref: #/components/neighborEntityDetails",
+    "openlattice-search-api-openapi.yml: dangling $ref: #/components/neighborEntityDetailsReduced",
+    "openlattice-search-api-openapi.yml: dangling $ref: #/components/neighborSearchFilter"
+  ],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,8 +1,28 @@
 aid: openlattice
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/openlattice.png
 name: OpenLattice
-description: OpenLattice is a company surfaced as a portfolio company of bullpen-capital and added to
-  the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  OpenLattice was a data-integration and analytics platform built around an Entity
+  Data Model (EDM) — a graph of entity types, property types, association types, and
+  EntitySets — with a fine-grained ACL permissions model over organizations, roles,
+  and principals. It was adopted by public-sector and criminal-justice programs such
+  as reentry case management, community work programs, childcare, and courts. The
+  company's hosted service and website (openlattice.com, api.openlattice.com) no
+  longer resolve, but its OpenAPI 3.0 specification (91 operations), multi-language
+  SDKs, and React UI kit remain published under the github.com/openlattice
+  organization, from which this profile was enriched.
 url: https://raw.githubusercontent.com/api-evangelist/openlattice/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,15 +32,132 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 15
+  pass: local-v1
 tags:
 - Company
-apis: []
+- Data Integration
+- Entity Data Model
+- Public Sector
+- Analytics
+- Graph
+- Criminal Justice
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: openlattice:openlattice-authorizations-api
+  name: OpenLattice authorizations API
+  description: The authorizations API from OpenLattice — 1 operation(s) for authorizations.
+  humanURL: https://github.com/openlattice/api
+  baseURL: https://api.openlattice.com
+  tags:
+  - authorizations
+  properties:
+  - type: OpenAPI
+    url: openapi/openlattice-authorizations-api-openapi.yml
+  - type: APIReference
+    url: https://github.com/openlattice/api
+- aid: openlattice:openlattice-data-api
+  name: OpenLattice data API
+  description: API endpoints to reading and writing data.
+  humanURL: https://github.com/openlattice/api
+  baseURL: https://api.openlattice.com
+  tags:
+  - data
+  properties:
+  - type: OpenAPI
+    url: openapi/openlattice-data-api-openapi.yml
+  - type: APIReference
+    url: https://github.com/openlattice/api
+- aid: openlattice:openlattice-edm-api
+  name: OpenLattice edm API
+  description: API endpoints to the entity data model.
+  humanURL: https://github.com/openlattice/api
+  baseURL: https://api.openlattice.com
+  tags:
+  - edm
+  properties:
+  - type: OpenAPI
+    url: openapi/openlattice-edm-api-openapi.yml
+  - type: APIReference
+    url: https://github.com/openlattice/api
+- aid: openlattice:openlattice-organizations-api
+  name: OpenLattice organizations API
+  description: API endpoints related to organizations.
+  humanURL: https://github.com/openlattice/api
+  baseURL: https://api.openlattice.com
+  tags:
+  - organizations
+  properties:
+  - type: OpenAPI
+    url: openapi/openlattice-organizations-api-openapi.yml
+  - type: APIReference
+    url: https://github.com/openlattice/api
+- aid: openlattice:openlattice-permissions-api
+  name: OpenLattice permissions API
+  description: API endpoints for permissions for organisations, roles and users.
+  humanURL: https://github.com/openlattice/api
+  baseURL: https://api.openlattice.com
+  tags:
+  - permissions
+  properties:
+  - type: OpenAPI
+    url: openapi/openlattice-permissions-api-openapi.yml
+  - type: APIReference
+    url: https://github.com/openlattice/api
+- aid: openlattice:openlattice-principal-api
+  name: OpenLattice principal API
+  description: The principal API from OpenLattice — 5 operation(s) for principal.
+  humanURL: https://github.com/openlattice/api
+  baseURL: https://api.openlattice.com
+  tags:
+  - principal
+  properties:
+  - type: OpenAPI
+    url: openapi/openlattice-principal-api-openapi.yml
+  - type: APIReference
+    url: https://github.com/openlattice/api
+- aid: openlattice:openlattice-search-api
+  name: OpenLattice search API
+  description: API endpoints to search data.
+  humanURL: https://github.com/openlattice/api
+  baseURL: https://api.openlattice.com
+  tags:
+  - search
+  properties:
+  - type: OpenAPI
+    url: openapi/openlattice-search-api-openapi.yml
+  - type: APIReference
+    url: https://github.com/openlattice/api
 common:
+- type: DomainSecurity
+  url: security/openlattice-domain-security.yml
+- type: Authentication
+  url: authentication/openlattice-authentication.yml
+- type: Packages
+  url: packages/openlattice-packages.yml
+- type: SDKs
+  url: packages/openlattice-packages.yml
+- type: Components
+  url: components/openlattice-components.yml
+- type: Conventions
+  url: conventions/openlattice-conventions.yml
+- type: DataModel
+  url: data-model/openlattice-data-model.yml
+- type: MCPServer
+  url: mcp/openlattice-mcp.yml
+- type: LLMsTxt
+  url: llms/openlattice-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: GitHubOrganization
+  url: https://github.com/openlattice
 - type: Website
-  url: https://openlattice.com/#
+  url: https://github.com/openlattice

@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/openlattice-openapi.yaml
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - header
+schemes:
+- name: http_auth
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  sources:
+  - openapi/openlattice-openapi.yaml
+- name: openlattice_auth
+  type: apiKey
+  in: header
+  parameter: Authorization
+  sources:
+  - openapi/openlattice-openapi.yaml

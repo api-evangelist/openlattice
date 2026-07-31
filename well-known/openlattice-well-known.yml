@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: probed
+source: live HTTPS probes of OpenLattice hosts
+notes: >-
+  All OpenLattice hosts (openlattice.com, api.openlattice.com,
+  api.staging.openlattice.com) no longer resolve/serve — every probe returned
+  connection failure (curl code 000). No .well-known documents are published.
+  Empty result recorded for auditability.
+probed:
+- host: openlattice.com
+  paths:
+  - {path: /.well-known/security.txt, status: 000, file: null}
+  - {path: /.well-known/openid-configuration, status: 000, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 000, file: null}
+  - {path: /.well-known/api-catalog, status: 000, file: null}
+  - {path: /.well-known/ai-plugin.json, status: 000, file: null}
+- host: api.openlattice.com
+  paths:
+  - {path: /.well-known/security.txt, status: 000, file: null}
+  - {path: /.well-known/openid-configuration, status: 000, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 000, file: null}
+  - {path: /.well-known/api-catalog, status: 000, file: null}
+  - {path: /.well-known/ai-plugin.json, status: 000, file: null}

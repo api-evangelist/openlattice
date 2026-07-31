@@ -1,0 +1,34 @@
+generated: '2026-07-20'
+method: generated
+source: openapi/openlattice-openapi.yaml
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the OpenLattice API
+  version: 1.0.0
+extends: ../openapi/openlattice-openapi.yaml
+actions:
+- target: $.info
+  description: Annotate provenance and current status of the OpenLattice API.
+  update:
+    x-apievangelist-enrichment:
+      profile: https://apis.io/openlattice
+      status: archived
+      note: >-
+        OpenLattice's hosted API (api.openlattice.com) and website no longer
+        resolve. The OpenAPI, SDKs, and UI kit remain published under
+        github.com/openlattice. Enrichment captured from source, not live host.
+      derived_artifacts:
+      - authentication/openlattice-authentication.yml
+      - conventions/openlattice-conventions.yml
+      - data-model/openlattice-data-model.yml
+      - mcp/openlattice-mcp.yml
+- target: $.info
+  description: Add contact + external docs pointer to the OpenLattice source org.
+  update:
+    x-source-repository: https://github.com/openlattice/api
+- target: $
+  description: Attach external documentation pointing at the OpenLattice source org.
+  update:
+    externalDocs:
+      description: OpenLattice API source (Object Models and REST APIs)
+      url: https://github.com/openlattice/api

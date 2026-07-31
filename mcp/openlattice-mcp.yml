@@ -1,0 +1,482 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/openlattice-openapi.yaml
+status: candidate
+notes: No official OpenLattice MCP server exists (company defunct). This is a CANDIDATE tool surface derived
+  1:1 from the 91 operations of the OpenLattice OpenAPI, grouped by tag. Not a running server.
+server:
+  name: openlattice
+  transport: candidate
+  auth: bearer JWT / apiKey (Authorization header)
+tool_count: 91
+tools:
+- name: getEntityDataModel
+  method: GET
+  path: /datastore/edm/
+  tag: edm
+  description: Gets the entity data model, including namespaces, schemas, entity types, association types,
+    and property types.
+- name: updateEntityDataModel
+  method: PATCH
+  path: /datastore/edm/
+  tag: edm
+  description: Updates the entity data model, including schemas, entity types, association types, and
+    property types.
+- name: getEntityDataModelDiff
+  method: POST
+  path: /datastore/edm/diff/
+  tag: edm
+  description: Gets the changes between the existing entity data model and the entity data model passed
+    in, including schemas, association types, entity types, and property types.
+- name: getEntityDataModelVersion
+  method: GET
+  path: /datastore/edm/version/
+  tag: edm
+  description: Returns the current entity data model version.
+- name: getEntitySet
+  method: GET
+  path: /datastore/edm/entity/set/{entitySetId}
+  tag: edm
+  description: Get the EntitySet definition for the given EntitySet UUID.
+- name: deleteEntitySet
+  method: DELETE
+  path: /datastore/edm/entity/set/{entitySetId}
+  tag: edm
+  description: Deletes the EntitySet definition for the given EntitySet UUID.
+- name: updateEntitySetMetaData
+  method: PATCH
+  path: /datastore/edm/entity/set/{entitySetId}
+  tag: edm
+  description: Updates the EntityType definition for the given EntitySet UUID with the given metadata.
+- name: getEntitySetId
+  method: GET
+  path: /datastore/edm/ids/entity/set/{entitySetName}
+  tag: edm
+  description: Gets the EntitySet UUID for the given EntitySet name.
+- name: getAllEntitySets
+  method: GET
+  path: /datastore/edm/entity/set
+  tag: edm
+  description: Get all EntitySet definitions.
+- name: createEntitySets
+  method: POST
+  path: /datastore/edm/entity/set
+  tag: edm
+  description: Create new EntitySet definitions if they don"t exist.
+- name: getAllEntitySetPropertyMetadata
+  method: GET
+  path: /datastore/edm/entity/set/{entitySetId}/property/type
+  tag: edm
+  description: Get all property type metadata for an entity set.
+- name: getEntitySetPropertyMetadata
+  method: GET
+  path: /datastore/edm/entity/set/{entitySetId}/property/type/{propertyTypeId}/
+  tag: edm
+  description: Get specified property type metadata for an entity set.
+- name: updateEntitySetPropertyMetadata
+  method: POST
+  path: /datastore/edm/entity/set/{entitySetId}/property/type/{propertyTypeId}/
+  tag: edm
+  description: Updates the property type metadata for the given entity set.
+- name: getEntityType
+  method: GET
+  path: /datastore/edm/entity/type/{entityTypeId}
+  tag: edm
+  description: Gets the EntityType definition for the given EntityType UUID.
+- name: deleteEntityType
+  method: DELETE
+  path: /datastore/edm/entity/type/{entityTypeId}
+  tag: edm
+  description: Deletes the EntityType definition for the given EntityType UUID.
+- name: updateEntityTypeMetaData
+  method: PATCH
+  path: /datastore/edm/entity/type/{entityTypeId}
+  tag: edm
+  description: Updates the EntityType definition for the given EntityType UUID with the given metadata.
+- name: getEntityTypeId
+  method: GET
+  path: /datastore/edm/ids/entity/type/{namespace}/{name}
+  tag: edm
+  description: Gets the EntityType UUID for the given EntityType FQN.
+- name: addPropertyTypeToEntityType
+  method: PUT
+  path: /datastore/edm/entity/type/{entityTypeId}/{propertyTypeId}
+  tag: edm
+  description: Updates the EntityType definition for the given EntityType UUID by adding the given PropertyType
+    UUID.
+- name: removePropertyTypeFromEntityType
+  method: DELETE
+  path: /datastore/edm/entity/type/{entityTypeId}/{propertyTypeId}
+  tag: edm
+  description: Updates the EntityType definition for the given EntityType UUID by removing the given PropertyType
+    UUID.
+- name: forceRemovePropertyTypeFromEntityType
+  method: DELETE
+  path: /datastore/edm/entity/type/{entityTypeId}/{propertyTypeId}/force
+  tag: edm
+  description: Updates the EntityType definition for the given EntityType UUID by removing the given PropertyType
+    UUID, regardless of whether or not there is data associated with the entity type.
+- name: getAllEntityTypes
+  method: GET
+  path: /datastore/edm/entity/type/
+  tag: edm
+  description: Gets all EntityType definitions.
+- name: createEntityType
+  method: POST
+  path: /datastore/edm/entity/type/
+  tag: edm
+  description: Creates a new EntityType definition, if it doesn't exist.
+- name: getAllAssociationEntityTypes
+  method: GET
+  path: /datastore/edm/association/type/
+  tag: edm
+  description: Gets all association EntityType definitions.
+- name: createAssociationType
+  method: POST
+  path: /datastore/edm/association/type/
+  tag: edm
+  description: Creates a new AssociationType definition, if it doesn"t exist.
+- name: reorderPropertyTypesInEntityType
+  method: PATCH
+  path: /datastore/edm/entity/type/{entityTypeId}/property/type
+  tag: edm
+  description: Updates the EntityType definition for the given EntityType UUID by reordering its properties
+    as specified by the provided list.
+- name: getEntityTypeHierarchy
+  method: PATCH
+  path: /datastore/edm/entity/type/{entityTypeId}/hierarchy
+  tag: edm
+  description: Get the EntityType hierarchy for the given EntityType UUID.
+- name: getPropertyType
+  method: GET
+  path: /datastore/edm/property/type/{propertyTypeId}
+  tag: edm
+  description: Gets the PropertyType definition for the given PropertyType UUID.
+- name: deletePropertyType
+  method: DELETE
+  path: /datastore/edm/property/type/{propertyTypeId}
+  tag: edm
+  description: Deletes the PropertyType definition for the given PropertyType UUID.
+- name: updatePropertyTypeMetaData
+  method: PATCH
+  path: /datastore/edm/property/type/{propertyTypeId}
+  tag: edm
+  description: Updates the PropertyType definition for the given PropertyType UUID with the given metadata.
+- name: forceDeletePropertyType
+  method: DELETE
+  path: /datastore/edm/property/type/{propertyTypeId}/force
+  tag: edm
+  description: Deletes the PropertyType definition for the given PropertyType UUID regardless of whether
+    or not there is data associated with it.
+- name: getPropertyTypeId
+  method: GET
+  path: /datastore/edm/ids/property/type/{namespace}/{name}
+  tag: edm
+  description: Gets the PropertyType UUID for the given PropertyType FQN.
+- name: getAllPropertyTypes
+  method: GET
+  path: /datastore/edm/property/type/
+  tag: edm
+  description: Gets all PropertyType definitions.
+- name: createPropertyType
+  method: POST
+  path: /datastore/edm/property/type/
+  tag: edm
+  description: Creates a new PropertyType definition, if it doesn"t exist.
+- name: getAllPropertyTypesInNamespace
+  method: GET
+  path: /datastore/edm/property/type/namespace/{namespace}
+  tag: edm
+  description: Gets all PropertyType definitions under the given namespace.
+- name: getAssociationType
+  method: GET
+  path: /datastore/edm/association/type/{associationTypeId}
+  tag: edm
+  description: Get the AssociationType definition for the given AssociationType UUID.
+- name: deleteAssociationType
+  method: DELETE
+  path: /datastore/edm/association/type/{associationTypeId}
+  tag: edm
+  description: Delete the AssociationType definition for the given AssociationType UUID.
+- name: getAssociationTypeDetails
+  method: GET
+  path: /datastore/edm/association/type/{associationTypeId}/detailed
+  tag: edm
+  description: Get details about the AssociationType for the given AssociationType UUID.
+- name: getAllAvailableAssociationTypes
+  method: GET
+  path: /datastore/edm/association/type/{associationTypeId}/available
+  tag: edm
+  description: Get all available associations for the given AssociationType UUID.
+- name: addDstEntityTypeToAssociationType
+  method: PUT
+  path: /datastore/edm/association/type/{associationTypeId}/dst/{entityTypeId}
+  tag: edm
+  description: Update the AssociationType dst entity types for the given AssociationType UUID by adding
+    the given EntityType UUID.
+- name: removeDstEntityTypeFromAssociationType
+  method: DELETE
+  path: /datastore/edm/association/type/{associationTypeId}/dst/{entityTypeId}
+  tag: edm
+  description: Updates the AssociationType dst entity types for the given AssociationType UUID by removing
+    the given EntityType UUID.
+- name: addSrcEntityTypeToAssociationType
+  method: PUT
+  path: /datastore/edm/association/type/{associationTypeId}/src/{entityTypeId}
+  tag: edm
+  description: Update the AssociationType src entity types for the given AssociationType UUID by adding
+    the given EntityType UUID.
+- name: removeSrcEntityTypeFromAssociationType
+  method: DELETE
+  path: /datastore/edm/association/type/{associationTypeId}/src/{entityTypeId}
+  tag: edm
+  description: Updates the AssociationType src entity types for the given AssociationType UUID by removing
+    the given EntityType UUID.
+- name: getAllPropertyUsageSummaries
+  method: GET
+  path: /datastore/edm/summary
+  tag: edm
+  description: Get Property Usage Summary for all properties.
+- name: getPropertyUsageSummary
+  method: GET
+  path: /datastore/edm/summary/{propertyTypeId}
+  tag: edm
+  description: Get Property Usage Summary for property with given ID.
+- name: getSchemaContents
+  method: GET
+  path: /datastore/edm/schema/{namespace}/{name}
+  tag: edm
+  description: Gets the schema contents for a corresponding namespace and name.
+- name: createEmptySchema
+  method: PUT
+  path: /datastore/edm/schema/{namespace}/{name}
+  tag: edm
+  description: Creates an empty schema, if it doesn't exist. If schema exists then no action is taken.
+- name: updateSchema
+  method: PATCH
+  path: /datastore/edm/schema/{namespace}/{name}
+  tag: edm
+  description: Edits the schema contents for a corresponding namespace and name.
+- name: getSchemas
+  method: GET
+  path: /datastore/edm/schema
+  tag: edm
+  description: Gets all schemas.
+- name: createSchemaIfNotExists
+  method: POST
+  path: /datastore/edm/schema
+  tag: edm
+  description: Creates an empty schema, if it doesn't exist. If schema exists then no action is taken.
+- name: getSchemasInNamespace
+  method: GET
+  path: /datastore/edm/schema/{namespace}
+  tag: edm
+  description: Gets all schemas associated with a given namespace and accessible by the caller.
+- name: loadEntitySetData
+  method: GET
+  path: /datastore/data/set/{entitySetId}
+  tag: data
+  description: Gets an iterable containing the entity data, using property type FQNs as key
+- name: loadFilteredEntitySetData
+  method: POST
+  path: /datastore/data/set/{entitySetId}
+  tag: data
+  description: Gets a list of entities by UUID's
+- name: clearEntitySet
+  method: DELETE
+  path: /datastore/data/set/{entitySetId}
+  tag: data
+  description: Clears the data from a single entity set.
+- name: deleteAllEntitiesFromEntitySet
+  method: DELETE
+  path: /datastore/data/set/{entitySetId}/all
+  tag: data
+  description: Clears the Entity matching the given Entity id and all of its neighbor Entities
+- name: getEntitySetSize
+  method: GET
+  path: /datastore/data/{entitySetId}/count
+  tag: data
+  description: Gets the number of entities in an entity set.
+- name: executeEntityNeighborSearch
+  method: GET
+  path: /datastore/search/{entitySetId}/{entityKeyId}
+  tag: search
+  description: Executes a search for all neighbors of an entity that are connected by an association
+- name: executeFilteredEntityNeighborSearch
+  method: POST
+  path: /datastore/search/{entitySetId}/neighbors/advanced
+  tag: search
+  description: Executes a search for all neighbors of multiple entities of the same entity set that are
+    connected by an association
+- name: executeFilteredEntityNeighborIdSearch
+  method: POST
+  path: /datastore/search/{entitySetId}/neighbors/advanced/ids
+  tag: search
+  description: Executes a search for all neighbors of multiple entities of the same entity set that are
+    connected by an association and returns a simple version of the neighborDetails
+- name: searchAllUsersByEmail
+  method: GET
+  path: /datastore/principals/users/search/email/"{emailAddress}"
+  tag: principal
+  description: Get the user id for the given email address.
+- name: getUser
+  method: GET
+  path: /datastore/principals/users/{userId}
+  tag: principal
+  description: Get the user for the given id.
+- name: getDbAccessCredentials
+  method: GET
+  path: /datastore/principals/db
+  tag: principal
+  description: Get the db access credentials.
+- name: getAllUsers
+  method: GET
+  path: /datastore/principals/users/
+  tag: principal
+  description: Get all users.
+- name: getCurrentRoles
+  method: GET
+  path: /datastore/principals/roles/current/
+  tag: principal
+  description: Get current roles.
+- name: getAcl
+  method: POST
+  path: /datastore/permissions
+  tag: permissions
+  description: Get the ACL for the given ACL Key, only if the user is the owner of the ACL Key.
+- name: updateAcl
+  method: PATCH
+  path: /datastore/permissions
+  tag: permissions
+  description: Updates the ACL for a particular ACL Key, only if the user is the owner of the ACL Key.
+- name: checkAuthorizations
+  method: POST
+  path: /datastore/authorizations
+  tag: authorizations
+  description: Check authorizations
+- name: getAccessibleObjects
+  method: GET
+  path: /datastore/authorizations
+  tag: authorizations
+  description: Returns paged results for all authorized objects of specified objectType, that the current
+    user has specified permission for.
+- name: getOrganizations
+  method: GET
+  path: /datastore/organizations
+  tag: organizations
+  description: Get all organisations
+- name: createOrganizationIfNotExists
+  method: POST
+  path: /datastore/organizations
+  tag: organizations
+  description: Create an organisation if it doesn't exist.
+- name: getOrganization
+  method: GET
+  path: /datastore/organizations/{organizationId}
+  tag: organizations
+  description: Get an organisation from the organizationId
+- name: destroyOrganization
+  method: DELETE
+  path: /datastore/organizations/{organizationId}
+  tag: organizations
+  description: Remove an organisation from the organizationId
+- name: getOrganizationEntitySets
+  method: GET
+  path: /datastore/organizations/{organizationId}/entitySets
+  tag: organizations
+  description: Get the entity sets for an organization for a certain filter
+- name: getFlaggedOrganizationEntitySets
+  method: POST
+  path: /datastore/organizations/{organizationId}/entitySets
+  tag: organizations
+  description: Get the entity sets for an organization for a certain flag
+- name: assembleEntitySets
+  method: POST
+  path: /datastore/organizations/{organizationId}/entitySets/assemble
+  tag: organizations
+  description: Materializes entity sets into the organization database.
+- name: updateTitle
+  method: PUT
+  path: /datastore/organizations/{organizationId}/title
+  tag: organizations
+  description: Update the organisation title
+- name: updateDescription
+  method: PUT
+  path: /datastore/organizations/{organizationId}/description
+  tag: organizations
+  description: Update the organisation description
+- name: getAutoApprovedEmailDomains
+  method: GET
+  path: /datastore/organizations/{organizationId}/email-domains
+  tag: organizations
+  description: Get auto-approved email domains
+- name: setAutoApprovedEmailDomain
+  method: PUT
+  path: /datastore/organizations/{organizationId}/email-domains
+  tag: organizations
+  description: Set auto-approved email domains
+- name: removeAutoApprovedEmailDomains
+  method: DELETE
+  path: /datastore/organizations/{organizationId}/email-domains
+  tag: organizations
+  description: Remove auto-approved email domains
+- name: getMembers
+  method: GET
+  path: /datastore/organizations/{organizationId}/principals/members
+  tag: organizations
+  description: Get members of a certain organization
+- name: addMember
+  method: PUT
+  path: /datastore/organizations/{organizationId}/principals/members/{userId}
+  tag: organizations
+  description: Add member to an organization
+- name: removeMember
+  method: DELETE
+  path: /datastore/organizations/{organizationId}/principals/members/{userId}
+  tag: organizations
+  description: Remove member from an organization
+- name: createRole
+  method: POST
+  path: /datastore/organizations/roles
+  tag: organizations
+  description: Create role
+- name: getRoles
+  method: GET
+  path: /datastore/organizations/{organizationId}/principals/roles
+  tag: organizations
+  description: Get roles for an organization
+- name: getRole
+  method: GET
+  path: /datastore/organizations/{organizationId}/principals/roles/{roleId}
+  tag: organizations
+  description: Get role for an organization from a roleId
+- name: deleteRole
+  method: DELETE
+  path: /datastore/organizations/{organizationId}/principals/roles/{roleId}
+  tag: organizations
+  description: Remove role for an organization
+- name: updateRoleTitle
+  method: POST
+  path: /datastore/organizations/{organizationId}/principals/roles/{roleId}/title
+  tag: organizations
+  description: Update role title for an organization from a roleId
+- name: updateRoleDescription
+  method: POST
+  path: /datastore/organizations/{organizationId}/principals/roles/{roleId}/description
+  tag: organizations
+  description: Update role description for an organization from a roleId
+- name: getAllUsersOfRole
+  method: GET
+  path: /datastore/organizations/{organizationId}/principals/roles/{roleId}/members/
+  tag: organizations
+  description: Get members of a role for an organization from a roleId
+- name: addRoleToUser
+  method: PUT
+  path: /datastore/organizations/{organizationId}/principals/roles/{roleId}/members/{userId}
+  tag: organizations
+  description: Add a role to a user
+- name: removeRoleFromUser
+  method: DELETE
+  path: /datastore/organizations/{organizationId}/principals/roles/{roleId}/members/{userId}
+  tag: organizations
+  description: Remove a role from a user

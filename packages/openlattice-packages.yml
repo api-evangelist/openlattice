@@ -1,0 +1,110 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.npmjs.com/~openlattice + https://github.com/openlattice/api-clients
+notes: >-
+  OpenLattice published a first-party JavaScript SDK plus supporting React/Redux
+  helper libraries to npm under the openlattice org, and auto-generated REST
+  clients (from openlattice.yaml) for six languages in the api-clients repo. The
+  company's domains no longer resolve, but the packages remain published. Only
+  packages whose repository resolves to github.com/openlattice are marked official.
+packages:
+# --- Published npm packages (first-party) ---
+- name: lattice-js
+  registry: npm
+  language: JavaScript
+  version: 0.0.0
+  official: true
+  role: sdk
+  description: JavaScript SDK for all OpenLattice REST APIs
+  url: https://www.npmjs.com/package/lattice-js
+  source: https://github.com/openlattice/lattice-js
+- name: lattice-auth
+  registry: npm
+  language: JavaScript
+  version: 0.29.0
+  official: true
+  role: helper
+  description: JavaScript helpers for OpenLattice auth
+  url: https://www.npmjs.com/package/lattice-auth
+  source: https://github.com/openlattice/lattice-auth
+- name: lattice-sagas
+  registry: npm
+  language: JavaScript
+  version: 0.71.0
+  official: true
+  role: helper
+  description: Redux-saga request-sequence lifecycles for OpenLattice REST APIs
+  url: https://www.npmjs.com/package/lattice-sagas
+  source: https://github.com/openlattice/lattice-sagas
+- name: lattice-utils
+  registry: npm
+  language: JavaScript
+  version: 0.13.0
+  official: true
+  role: helper
+  description: OpenLattice JavaScript library for common utilities
+  url: https://www.npmjs.com/package/lattice-utils
+  source: https://github.com/openlattice/lattice-utils
+- name: lattice-ui-kit
+  registry: npm
+  language: JavaScript
+  version: 0.47.0
+  official: true
+  role: ui
+  description: OpenLattice UI Kit for React
+  url: https://www.npmjs.com/package/lattice-ui-kit
+  source: https://github.com/openlattice/lattice-ui-kit
+- name: lattice-fabricate
+  registry: npm
+  language: JavaScript
+  version: 0.20.0
+  official: true
+  role: ui
+  description: React HOCs for components dependent on the OpenLattice data model
+  url: https://www.npmjs.com/package/lattice-fabricate
+  source: https://github.com/openlattice/lattice-fabricate
+- name: redux-reqseq
+  registry: npm
+  language: JavaScript
+  version: 0.7.0
+  official: true
+  role: helper
+  description: JavaScript library for request-sequence lifecycles in redux
+  url: https://www.npmjs.com/package/redux-reqseq
+  source: https://github.com/openlattice/redux-reqseq
+# --- OpenAPI-generated REST clients (first-party, source-code, in api-clients repo) ---
+- name: openlattice-python-client
+  registry: github
+  language: Python
+  official: true
+  role: sdk
+  description: OpenAPI-generated Python client for the OpenLattice REST API
+  source: https://github.com/openlattice/api-clients/tree/master/python
+- name: openlattice-r-client
+  registry: github
+  language: R
+  official: true
+  role: sdk
+  description: OpenAPI-generated R client for the OpenLattice REST API
+  source: https://github.com/openlattice/api-clients/tree/master/R
+- name: openlattice-go-client
+  registry: github
+  language: Go
+  official: true
+  role: sdk
+  description: OpenAPI-generated Go client for the OpenLattice REST API
+  source: https://github.com/openlattice/api-clients/tree/master/go
+- name: openlattice-ruby-client
+  registry: github
+  language: Ruby
+  official: true
+  role: sdk
+  description: OpenAPI-generated Ruby client for the OpenLattice REST API
+  source: https://github.com/openlattice/api-clients/tree/master/ruby
+- name: openlattice-android-client
+  registry: github
+  language: Java
+  official: true
+  role: sdk
+  description: OpenAPI-generated Android/Java client for the OpenLattice REST API
+  source: https://github.com/openlattice/api-clients/tree/master/android

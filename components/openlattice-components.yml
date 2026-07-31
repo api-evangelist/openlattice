@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.npmjs.com/package/lattice-ui-kit + https://github.com/openlattice/lattice-ui-kit
+notes: >-
+  OpenLattice shipped a first-party React component library (the OpenLattice UI
+  Kit) plus fabricate HOCs used to render its consumer/government dashboards
+  (e.g. reentry-case-management, community-work-program, care). These are
+  client-side embeddable UI building blocks, distinct from the REST SDKs.
+families:
+- family: OpenLattice UI Kit
+  kind: react-component-library
+  loader: lattice-ui-kit
+  package: https://www.npmjs.com/package/lattice-ui-kit
+  source: https://github.com/openlattice/lattice-ui-kit
+  version: 0.47.0
+  description: React UI component kit for building OpenLattice application surfaces.
+- family: Fabricate
+  kind: react-hoc
+  loader: lattice-fabricate
+  package: https://www.npmjs.com/package/lattice-fabricate
+  source: https://github.com/openlattice/lattice-fabricate
+  version: 0.20.0
+  description: React higher-order components for form/field surfaces bound to the OpenLattice entity data model.
