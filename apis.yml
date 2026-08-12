@@ -137,6 +137,8 @@ apis:
   - type: APIReference
     url: https://github.com/openlattice/api
 common:
+- type: Overlay
+  url: overlays/openlattice-openapi-overlay.yaml
 - type: DomainSecurity
   url: security/openlattice-domain-security.yml
 - type: Authentication
