@@ -1,0 +1,117 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenLattice authorizations principal API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "principal",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the user id for the given email address.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/principals/users/search/email/\":emailAddress\"",
+            "params": [
+              {
+                "name": "emailAddress",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get the user id for the given email address."
+        },
+        {
+          "info": {
+            "name": "Get the user for the given id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/principals/users/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get the user for the given id."
+        },
+        {
+          "info": {
+            "name": "Get the db access credentials.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/principals/db",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get the db access credentials."
+        },
+        {
+          "info": {
+            "name": "Get all users.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/principals/users/",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get all users."
+        },
+        {
+          "info": {
+            "name": "Get current roles.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/principals/roles/current/",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get current roles."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

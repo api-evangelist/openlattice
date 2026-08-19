@@ -1,0 +1,103 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenLattice authorizations search API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Executes a search for all neighbors of an entity that are connected by an association",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/search/:entitySetId/:entityKeyId",
+            "params": [
+              {
+                "name": "entitySetId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entityKeyId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Executes a search for all neighbors of an entity that are connected by an association"
+        },
+        {
+          "info": {
+            "name": "Executes a search for all neighbors of multiple entities of the same entity set that are connected by an association",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openlattice.com/datastore/search/:entitySetId/neighbors/advanced",
+            "params": [
+              {
+                "name": "entitySetId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Executes a search for all neighbors of multiple entities of the same entity set that are connected by an association"
+        },
+        {
+          "info": {
+            "name": "Executes a search for all neighbors of multiple entities of the same entity set that are connected by an association and returns a simple version of the neighborDetails",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openlattice.com/datastore/search/:entitySetId/neighbors/advanced/ids",
+            "params": [
+              {
+                "name": "entitySetId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Executes a search for all neighbors of multiple entities of the same entity set that are connected by an association and returns a simple version of the neighborDetails"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

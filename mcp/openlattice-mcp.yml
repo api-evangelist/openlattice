@@ -480,3 +480,9 @@ tools:
   path: /datastore/organizations/{organizationId}/principals/roles/{roleId}/members/{userId}
   tag: organizations
   description: Remove a role from a user
+deployment:
+  mode: none
+  verified: derived
+  tools: 91
+  checked: '2026-08-12'
+  source: catalog MCP census

@@ -1,0 +1,668 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenLattice authorizations organizations API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "organizations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all organisations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/organizations",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get all organisations"
+        },
+        {
+          "info": {
+            "name": "Create an organisation if it doesn't exist.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openlattice.com/datastore/organizations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create an organisation if it doesn't exist."
+        },
+        {
+          "info": {
+            "name": "Get an organisation from the organizationId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get an organisation from the organizationId"
+        },
+        {
+          "info": {
+            "name": "Remove an organisation from the organizationId",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Remove an organisation from the organizationId"
+        },
+        {
+          "info": {
+            "name": "Get the entity sets for an organization for a certain filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/entitySets",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get the entity sets for an organization for a certain filter"
+        },
+        {
+          "info": {
+            "name": "Get the entity sets for an organization for a certain flag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/entitySets",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get the entity sets for an organization for a certain flag"
+        },
+        {
+          "info": {
+            "name": "Materializes entity sets into the organization database.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/entitySets/assemble",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Materializes entity sets into the organization database."
+        },
+        {
+          "info": {
+            "name": "Update the organisation title",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/title",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update the organisation title"
+        },
+        {
+          "info": {
+            "name": "Update the organisation description",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/description",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update the organisation description"
+        },
+        {
+          "info": {
+            "name": "Get auto-approved email domains",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/email-domains",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get auto-approved email domains"
+        },
+        {
+          "info": {
+            "name": "Set auto-approved email domains",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/email-domains",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Set auto-approved email domains"
+        },
+        {
+          "info": {
+            "name": "Remove auto-approved email domains",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/email-domains",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Remove auto-approved email domains"
+        },
+        {
+          "info": {
+            "name": "Get members of a certain organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/principals/members",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get members of a certain organization"
+        },
+        {
+          "info": {
+            "name": "Add member to an organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/principals/members/:userId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Add member to an organization"
+        },
+        {
+          "info": {
+            "name": "Remove member from an organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/principals/members/:userId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Remove member from an organization"
+        },
+        {
+          "info": {
+            "name": "Create role",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openlattice.com/datastore/organizations/roles",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create role"
+        },
+        {
+          "info": {
+            "name": "Get roles for an organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/principals/roles",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get roles for an organization"
+        },
+        {
+          "info": {
+            "name": "Get role for an organization from a roleId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/principals/roles/:roleId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get role for an organization from a roleId"
+        },
+        {
+          "info": {
+            "name": "Remove role for an organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/principals/roles/:roleId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Remove role for an organization"
+        },
+        {
+          "info": {
+            "name": "Update role title for an organization from a roleId",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/principals/roles/:roleId/title",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update role title for an organization from a roleId"
+        },
+        {
+          "info": {
+            "name": "Update role description for an organization from a roleId",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/principals/roles/:roleId/description",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update role description for an organization from a roleId"
+        },
+        {
+          "info": {
+            "name": "Get members of a role for an organization from a roleId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/principals/roles/:roleId/members/",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get members of a role for an organization from a roleId"
+        },
+        {
+          "info": {
+            "name": "Add a role to a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/principals/roles/:roleId/members/:userId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Add a role to a user"
+        },
+        {
+          "info": {
+            "name": "Remove a role from a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.openlattice.com/datastore/organizations/:organizationId/principals/roles/:roleId/members/:userId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Remove a role from a user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

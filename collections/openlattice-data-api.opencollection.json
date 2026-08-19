@@ -1,0 +1,147 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenLattice authorizations data API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Gets an iterable containing the entity data, using property type FQNs as key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/data/set/:entitySetId",
+            "params": [
+              {
+                "name": "entitySetId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Gets an iterable containing the entity data, using property type FQNs as key"
+        },
+        {
+          "info": {
+            "name": "Gets a list of entities by UUID's",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openlattice.com/datastore/data/set/:entitySetId",
+            "params": [
+              {
+                "name": "entitySetId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Gets a list of entities by UUID's"
+        },
+        {
+          "info": {
+            "name": "Clears the data from a single entity set.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.openlattice.com/datastore/data/set/:entitySetId",
+            "params": [
+              {
+                "name": "entitySetId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Clears the data from a single entity set."
+        },
+        {
+          "info": {
+            "name": "Clears the Entity matching the given Entity id and all of its neighbor Entities",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.openlattice.com/datastore/data/set/:entitySetId/all",
+            "params": [
+              {
+                "name": "entitySetId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Clears the Entity matching the given Entity id and all of its neighbor Entities"
+        },
+        {
+          "info": {
+            "name": "Gets the number of entities in an entity set.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/data/:entitySetId/count",
+            "params": [
+              {
+                "name": "entitySetId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Gets the number of entities in an entity set."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

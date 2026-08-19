@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenLattice authorizations permissions API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "permissions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the ACL for the given ACL Key, only if the user is the owner of the ACL Key.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openlattice.com/datastore/permissions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get the ACL for the given ACL Key, only if the user is the owner of the ACL Key."
+        },
+        {
+          "info": {
+            "name": "Updates the ACL for a particular ACL Key, only if the user is the owner of the ACL Key.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.openlattice.com/datastore/permissions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Updates the ACL for a particular ACL Key, only if the user is the owner of the ACL Key."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

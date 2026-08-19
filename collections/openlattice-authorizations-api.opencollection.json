@@ -1,0 +1,73 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenLattice authorizations API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "authorizations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns paged results for all authorized objects of specified objectType, that the current user has specified permission for.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openlattice.com/datastore/authorizations",
+            "params": [
+              {
+                "name": "objectType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "permission",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pagingToken",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns paged results for all authorized objects of specified objectType, that the current user has specified permission for."
+        },
+        {
+          "info": {
+            "name": "Check authorizations",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openlattice.com/datastore/authorizations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Check authorizations"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
