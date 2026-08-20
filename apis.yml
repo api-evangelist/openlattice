@@ -58,6 +58,8 @@ apis:
   humanURL: https://github.com/openlattice/api
   baseURL: https://api.openlattice.com
   tags:
+  - Authorizations
+  tags_raw:
   - authorizations
   properties:
   - type: OpenAPI
@@ -70,6 +72,8 @@ apis:
   humanURL: https://github.com/openlattice/api
   baseURL: https://api.openlattice.com
   tags:
+  - Data
+  tags_raw:
   - data
   properties:
   - type: OpenAPI
@@ -94,6 +98,8 @@ apis:
   humanURL: https://github.com/openlattice/api
   baseURL: https://api.openlattice.com
   tags:
+  - Organization
+  tags_raw:
   - organizations
   properties:
   - type: OpenAPI
@@ -106,6 +112,8 @@ apis:
   humanURL: https://github.com/openlattice/api
   baseURL: https://api.openlattice.com
   tags:
+  - Permissions
+  tags_raw:
   - permissions
   properties:
   - type: OpenAPI
@@ -118,6 +126,8 @@ apis:
   humanURL: https://github.com/openlattice/api
   baseURL: https://api.openlattice.com
   tags:
+  - Principal
+  tags_raw:
   - principal
   properties:
   - type: OpenAPI
@@ -130,6 +140,8 @@ apis:
   humanURL: https://github.com/openlattice/api
   baseURL: https://api.openlattice.com
   tags:
+  - Search
+  tags_raw:
   - search
   properties:
   - type: OpenAPI
