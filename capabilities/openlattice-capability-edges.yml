@@ -1,0 +1,54 @@
+slug: openlattice
+provider: OpenLattice
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Public Sector & Government
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: permissions
+  spec_file: openlattice-permissions-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: POST /datastore/permissions  getAcl  "Get the ACL for the given ACL Key"; PATCH /datastore/permissions  updateAcl
+  reason: Direct management of access control lists over platform objects — identity and access management.
+- tag: authorizations
+  spec_file: openlattice-authorizations-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: POST /datastore/authorizations  checkAuthorizations  "Check authorizations"; GET returns "all
+    authorized objects ... that the current user has specified permission for"
+  reason: Runtime permission checks against the platform's ACL model — access management, not a domain
+    business capability.
+- tag: edm
+  spec_file: openlattice-edm-api-openapi.yml
+  capability_id: BC-610.40
+  capability_id_l1: BC-610
+  capability_name: Data Architecture Management
+  confidence: 0.75
+  evidence: getEntityDataModel  "Gets the entity data model, including namespaces, schemas, entity types,
+    association types, and property types"; updateEntitySetMetaData
+  reason: Management of schemas, entity types, association types and property types is logical data model
+    / data architecture management for the platform.
+- tag: principal
+  spec_file: openlattice-principal-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.75
+  evidence: GET /datastore/principals/users/{userId} getUser; getCurrentRoles 'Get current roles.'; getDbAccessCredentials
+    'Get the db access credentials.'
+  reason: The principal tag exposes user lookup, role retrieval and database access credentials within
+    OpenLattice's ACL model — this is identity and access management plumbing, not any public-sector business
+    capability.

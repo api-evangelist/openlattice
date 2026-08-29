@@ -160,6 +160,9 @@ apis:
   - type: APIReference
     url: https://github.com/openlattice/api
 common:
+- type: CapabilityMap
+  url: capabilities/openlattice-capability-edges.yml
+  name: OpenLattice Business Capability Map
 - type: Overlay
   url: overlays/openlattice-openapi-overlay.yaml
 - type: DomainSecurity
