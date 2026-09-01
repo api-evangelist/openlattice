@@ -69,7 +69,7 @@ apis:
   humanURL: https://github.com/openlattice/api
   baseURL: https://api.openlattice.com
   tags:
-  - authorizations
+  - Authorizations
   tags_raw:
   - authorizations
   properties:
