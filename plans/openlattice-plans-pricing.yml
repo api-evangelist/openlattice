@@ -10,6 +10,12 @@ provenance:
   grounding: every price_text was found verbatim in the fetched page text
 audience: business-product
 pricing_basis: per-seat
+delivery:
+  delivery: managed+licensed
+  method: page
+  read: '2026-09-20'
+  evidence: Self-hosted GitHub for on-prem appliances or self-managed cloud tenants.
+  managed_tier: Team
 published: true
 note: Page is GitHub's pricing page, not openlattice. Team/Enterprise prices shown as first-12-months
   rates.
