@@ -161,6 +161,10 @@ apis:
   - type: APIReference
     url: https://github.com/openlattice/api
 common:
+- type: Pricing
+  url: https://github.com/pricing
+- type: Plans
+  url: plans/openlattice-plans-pricing.yml
 - type: CapabilityMap
   url: capabilities/openlattice-capability-edges.yml
   name: OpenLattice Business Capability Map
