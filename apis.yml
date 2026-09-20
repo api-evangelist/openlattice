@@ -161,6 +161,8 @@ apis:
   - type: APIReference
     url: https://github.com/openlattice/api
 common:
+- type: RateLimits
+  url: rate-limits/openlattice-rate-limits.yml
 - type: Pricing
   url: https://github.com/pricing
 - type: Plans

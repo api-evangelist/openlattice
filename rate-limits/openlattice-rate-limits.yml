@@ -1,0 +1,18 @@
+# Rate limits transcribed from the provider's own documentation — see provenance. Quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://github.com/envoyproxy/ratelimit
+sources:
+- https://github.com/envoyproxy/ratelimit
+provenance:
+  tool: planning/api-economics/harvest_ratelimits.py
+  run: 20260920T133210
+  grounding: every limit_text was found verbatim in the fetched page text
+published: false
+note: Page is the README for the envoyproxy/ratelimit open-source service (not an OpenLattice API rate-limit
+  policy). Numbers shown (e.g. 500 requests per second, 5 per day) are illustrative YAML configuration
+  examples, not published API limits. It does mention the /json endpoint returns HTTP 429 when a rate
+  limit is exceeded.
+limit_count: 0
+limits: []
+exceeded_status: 429
