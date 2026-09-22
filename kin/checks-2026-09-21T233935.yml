@@ -2,16 +2,16 @@
 kin_checks:
   slug: openlattice
   schema_version: 0.22.0
-  scored_at: '2026-09-19'
-  run_ts: 2026-09-19T193153
+  scored_at: '2026-09-21'
+  run_ts: 2026-09-21T233935
   note: Actionable checks (missed + partial) in `checks`, plus the ids that did not
     apply in `na`. Everything else in rubric/scoring-0.22.0.yml was earned; counts
     below let you verify that.
   counts:
     total: 136
-    earned: 27
-    partial: 5
-    missed: 79
+    earned: 30
+    partial: 6
+    missed: 75
     na: 25
   checks:
   - id: multiple_apis
@@ -110,12 +110,6 @@ kin_checks:
     status: missed
   - id: blog_present
     status: missed
-  - id: plans_present
-    status: missed
-  - id: plans_multiple
-    status: missed
-  - id: pricing_link
-    status: missed
   - id: sign_up_present
     status: missed
   - id: terms_of_service
@@ -160,8 +154,6 @@ kin_checks:
     status: missed
   - id: openapi_examples
     status: missed
-  - id: rate_limit_signal
-    status: missed
   - id: event_surface_described
     status: missed
   - id: well_known_catalog
@@ -194,6 +186,10 @@ kin_checks:
     status: partial
     earned: 3.5
     detail: 'grade: bearer'
+  - id: rate_limit_signal
+    status: partial
+    earned: 3.5
+    detail: 'grade: documented'
   - id: agent_skills
     status: partial
     earned: 1.25
