@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   description: OpenLattice API
   version: 0.0.1
-  title: OpenLattice authorizations principal API
+  title: OpenLattice Principal API
   termsOfService: http://api.openlattice.com/terms/
   contact:
     email: support@openlattice.com
@@ -17,14 +17,14 @@ servers:
 - url: http://localhost:8080
   description: Local OpenLattice API
 tags:
-- name: principal
+- name: Principal
 paths:
   /datastore/principals/users/search/email/"{emailAddress}":
     get:
-      summary: Get the user id for the given email address.
+      summary: Get the user id for the given email address
       operationId: searchAllUsersByEmail
       tags:
-      - principal
+      - Principal
       security:
       - openlattice_auth: []
       - http_auth: []
@@ -45,10 +45,10 @@ paths:
                   $ref: '#/components/auth0userBasic'
   /datastore/principals/users/{userId}:
     get:
-      summary: Get the user for the given id.
+      summary: Get the user for the given id
       operationId: getUser
       tags:
-      - principal
+      - Principal
       security:
       - openlattice_auth: []
       - http_auth: []
@@ -67,10 +67,10 @@ paths:
                 $ref: '#/components/auth0userBasic'
   /datastore/principals/db:
     get:
-      summary: Get the db access credentials.
+      summary: Get the db access credentials
       operationId: getDbAccessCredentials
       tags:
-      - principal
+      - Principal
       security:
       - openlattice_auth: []
       - http_auth: []
@@ -83,10 +83,10 @@ paths:
                 type: string
   /datastore/principals/users/:
     get:
-      summary: Get all users.
+      summary: Get all users
       operationId: getAllUsers
       tags:
-      - principal
+      - Principal
       security:
       - openlattice_auth: []
       - http_auth: []
@@ -101,10 +101,10 @@ paths:
                   $ref: '#/components/auth0userBasic'
   /datastore/principals/roles/current/:
     get:
-      summary: Get current roles.
+      summary: Get current roles
       operationId: getCurrentRoles
       tags:
-      - principal
+      - Principal
       security:
       - openlattice_auth: []
       - http_auth: []

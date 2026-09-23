@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   description: OpenLattice API
   version: 0.0.1
-  title: OpenLattice authorizations API
+  title: OpenLattice Authorizations API
   termsOfService: http://api.openlattice.com/terms/
   contact:
     email: support@openlattice.com
@@ -17,14 +17,14 @@ servers:
 - url: http://localhost:8080
   description: Local OpenLattice API
 tags:
-- name: authorizations
+- name: Authorizations
 paths:
   /datastore/authorizations:
     post:
       summary: Check authorizations
       operationId: checkAuthorizations
       tags:
-      - authorizations
+      - Authorizations
       security:
       - openlattice_auth: []
       - http_auth: []
@@ -44,10 +44,10 @@ paths:
                 items:
                   $ref: '#/components/Authorization'
     get:
-      summary: Returns paged results for all authorized objects of specified objectType, that the current user has specified permission for.
+      summary: Returns paged results for all authorized objects of specified objectType, that…
       operationId: getAccessibleObjects
       tags:
-      - authorizations
+      - Authorizations
       security:
       - openlattice_auth: []
       - http_auth: []

@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   description: OpenLattice API
   version: 0.0.1
-  title: OpenLattice authorizations data API
+  title: OpenLattice Data API
   termsOfService: http://api.openlattice.com/terms/
   contact:
     email: support@openlattice.com
@@ -17,7 +17,7 @@ servers:
 - url: http://localhost:8080
   description: Local OpenLattice API
 tags:
-- name: data
+- name: Data
   description: API endpoints to reading and writing data.
 paths:
   /datastore/data/set/{entitySetId}:
@@ -32,7 +32,7 @@ paths:
           type: string
           format: uuid
       tags:
-      - data
+      - Data
       security:
       - openlattice_auth: []
       - http_auth: []
@@ -68,7 +68,7 @@ paths:
               items:
                 $ref: '#/components/entitySetSelection'
       tags:
-      - data
+      - Data
       security:
       - openlattice_auth: []
       - http_auth: []
@@ -86,7 +86,7 @@ paths:
                     items:
                       type: string
     delete:
-      summary: Clears the data from a single entity set.
+      summary: Clears the data from a single entity set
       operationId: clearEntitySet
       parameters:
       - name: entitySetId
@@ -96,7 +96,7 @@ paths:
           type: string
           format: uuid
       tags:
-      - data
+      - Data
       security:
       - openlattice_auth: []
       - http_auth: []
@@ -123,7 +123,7 @@ paths:
           - Soft
           - Hard
       tags:
-      - data
+      - Data
       security:
       - openlattice_auth: []
       - http_auth: []
@@ -132,7 +132,7 @@ paths:
           description: Success
   /datastore/data/{entitySetId}/count:
     get:
-      summary: Gets the number of entities in an entity set.
+      summary: Gets the number of entities in an entity set
       operationId: getEntitySetSize
       parameters:
       - name: entitySetId
@@ -142,7 +142,7 @@ paths:
           type: string
           format: uuid
       tags:
-      - data
+      - Data
       security:
       - openlattice_auth: []
       - http_auth: []

@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   description: OpenLattice API
   version: 0.0.1
-  title: OpenLattice authorizations edm API
+  title: OpenLattice Edm API
   termsOfService: http://api.openlattice.com/terms/
   contact:
     email: support@openlattice.com
@@ -22,7 +22,7 @@ tags:
 paths:
   /datastore/edm/:
     get:
-      summary: Gets the entity data model, including namespaces, schemas, entity types, association types, and property types.
+      summary: Gets the entity data model, including namespaces, schemas, entity types…
       operationId: getEntityDataModel
       responses:
         '200':
@@ -34,7 +34,7 @@ paths:
       tags:
       - edm
     patch:
-      summary: Updates the entity data model, including schemas, entity types, association types, and property types.
+      summary: Updates the entity data model, including schemas, entity types, association…
       operationId: updateEntityDataModel
       requestBody:
         required: true
@@ -52,7 +52,7 @@ paths:
           description: Success
   /datastore/edm/diff/:
     post:
-      summary: Gets the changes between the existing entity data model and the entity data model passed in, including schemas, association types, entity types, and property types.
+      summary: Gets the changes between the existing entity data model and the entity data…
       operationId: getEntityDataModelDiff
       requestBody:
         required: true
@@ -74,7 +74,7 @@ paths:
                 $ref: '#/components/EDMdiff'
   /datastore/edm/version/:
     get:
-      summary: Returns the current entity data model version.
+      summary: Returns the current entity data model version
       operationId: getEntityDataModelVersion
       tags:
       - edm
@@ -83,7 +83,7 @@ paths:
           description: Success
   /datastore/edm/entity/set/{entitySetId}:
     get:
-      summary: Get the EntitySet definition for the given EntitySet UUID.
+      summary: Get the EntitySet definition for the given EntitySet UUID
       operationId: getEntitySet
       parameters:
       - name: entitySetId
@@ -105,7 +105,7 @@ paths:
               schema:
                 $ref: '#/components/entitySet'
     delete:
-      summary: Deletes the EntitySet definition for the given EntitySet UUID.
+      summary: Deletes the EntitySet definition for the given EntitySet UUID
       operationId: deleteEntitySet
       parameters:
       - name: entitySetId
@@ -123,7 +123,7 @@ paths:
         '200':
           description: Success
     patch:
-      summary: Updates the EntityType definition for the given EntitySet UUID with the given metadata.
+      summary: Updates the EntityType definition for the given EntitySet UUID with the given…
       operationId: updateEntitySetMetaData
       parameters:
       - name: entitySetId
@@ -148,7 +148,7 @@ paths:
           description: Success
   /datastore/edm/ids/entity/set/{entitySetName}:
     get:
-      summary: Gets the EntitySet UUID for the given EntitySet name.
+      summary: Gets the EntitySet UUID for the given EntitySet name
       operationId: getEntitySetId
       parameters:
       - name: entitySetName
@@ -171,7 +171,7 @@ paths:
                 format: uuid
   /datastore/edm/entity/set:
     get:
-      summary: Get all EntitySet definitions.
+      summary: Get all EntitySet definitions
       operationId: getAllEntitySets
       tags:
       - edm
@@ -188,7 +188,7 @@ paths:
                 items:
                   $ref: '#/components/entitySet'
     post:
-      summary: Create new EntitySet definitions if they don"t exist.
+      summary: Create new EntitySet definitions if they don"t exist
       operationId: createEntitySets
       requestBody:
         required: true
@@ -208,7 +208,7 @@ paths:
           description: Success
   /datastore/edm/entity/set/{entitySetId}/property/type:
     get:
-      summary: Get all property type metadata for an entity set.
+      summary: Get all property type metadata for an entity set
       operationId: getAllEntitySetPropertyMetadata
       parameters:
       - name: entitySetId
@@ -233,7 +233,7 @@ paths:
                   $ref: '#/components/propertyType'
   /datastore/edm/entity/set/{entitySetId}/property/type/{propertyTypeId}/:
     get:
-      summary: Get specified property type metadata for an entity set.
+      summary: Get specified property type metadata for an entity set
       operationId: getEntitySetPropertyMetadata
       parameters:
       - name: entitySetId
@@ -261,7 +261,7 @@ paths:
               schema:
                 $ref: '#/components/propertyType'
     post:
-      summary: Updates the property type metadata for the given entity set.
+      summary: Updates the property type metadata for the given entity set
       operationId: updateEntitySetPropertyMetadata
       tags:
       - edm
@@ -292,7 +292,7 @@ paths:
           description: Success
   /datastore/edm/entity/type/{entityTypeId}:
     get:
-      summary: Gets the EntityType definition for the given EntityType UUID.
+      summary: Gets the EntityType definition for the given EntityType UUID
       operationId: getEntityType
       tags:
       - edm
@@ -311,7 +311,7 @@ paths:
               schema:
                 $ref: '#/components/entityType'
     delete:
-      summary: Deletes the EntityType definition for the given EntityType UUID.
+      summary: Deletes the EntityType definition for the given EntityType UUID
       operationId: deleteEntityType
       tags:
       - edm
@@ -326,7 +326,7 @@ paths:
         '200':
           description: Success
     patch:
-      summary: Updates the EntityType definition for the given EntityType UUID with the given metadata.
+      summary: Updates the EntityType definition for the given EntityType UUID with the given…
       operationId: updateEntityTypeMetaData
       parameters:
       - name: entityTypeId
@@ -351,7 +351,7 @@ paths:
           description: Success
   /datastore/edm/ids/entity/type/{namespace}/{name}:
     get:
-      summary: Gets the EntityType UUID for the given EntityType FQN.
+      summary: Gets the EntityType UUID for the given EntityType FQN
       operationId: getEntityTypeId
       tags:
       - edm
@@ -381,7 +381,7 @@ paths:
                 format: uuid
   /datastore/edm/entity/type/{entityTypeId}/{propertyTypeId}:
     put:
-      summary: Updates the EntityType definition for the given EntityType UUID by adding the given PropertyType UUID.
+      summary: Updates the EntityType definition for the given EntityType UUID by adding the…
       operationId: addPropertyTypeToEntityType
       tags:
       - edm
@@ -405,7 +405,7 @@ paths:
         '200':
           description: Success
     delete:
-      summary: Updates the EntityType definition for the given EntityType UUID by removing the given PropertyType UUID.
+      summary: Updates the EntityType definition for the given EntityType UUID by removing the…
       operationId: removePropertyTypeFromEntityType
       tags:
       - edm
@@ -430,7 +430,7 @@ paths:
           description: Success
   /datastore/edm/entity/type/{entityTypeId}/{propertyTypeId}/force:
     delete:
-      summary: Updates the EntityType definition for the given EntityType UUID by removing the given PropertyType UUID, regardless of whether or not there is data associated with the entity type.
+      summary: Updates the EntityType definition for the given EntityType UUID by removing the…
       operationId: forceRemovePropertyTypeFromEntityType
       tags:
       - edm
@@ -455,7 +455,7 @@ paths:
           description: Success
   /datastore/edm/entity/type/:
     get:
-      summary: Gets all EntityType definitions.
+      summary: Gets all EntityType definitions
       operationId: getAllEntityTypes
       tags:
       - edm
@@ -472,7 +472,7 @@ paths:
                 items:
                   $ref: '#/components/entityType'
     post:
-      summary: Creates a new EntityType definition, if it doesn't exist.
+      summary: Creates a new EntityType definition, if it doesn't exist
       operationId: createEntityType
       tags:
       - edm
@@ -487,7 +487,7 @@ paths:
           description: Success
   /datastore/edm/association/type/:
     get:
-      summary: Gets all association EntityType definitions.
+      summary: Gets all association EntityType definitions
       operationId: getAllAssociationEntityTypes
       tags:
       - edm
@@ -504,7 +504,7 @@ paths:
                 items:
                   $ref: '#/components/associationType'
     post:
-      summary: Creates a new AssociationType definition, if it doesn"t exist.
+      summary: Creates a new AssociationType definition, if it doesn"t exist
       operationId: createAssociationType
       tags:
       - edm
@@ -521,7 +521,7 @@ paths:
           description: Success
   /datastore/edm/entity/type/{entityTypeId}/property/type:
     patch:
-      summary: Updates the EntityType definition for the given EntityType UUID by reordering its properties as specified by the provided list.
+      summary: Updates the EntityType definition for the given EntityType UUID by reordering…
       operationId: reorderPropertyTypesInEntityType
       tags:
       - edm
@@ -548,7 +548,7 @@ paths:
           description: Success
   /datastore/edm/entity/type/{entityTypeId}/hierarchy:
     patch:
-      summary: Get the EntityType hierarchy for the given EntityType UUID.
+      summary: Get the EntityType hierarchy for the given EntityType UUID
       operationId: getEntityTypeHierarchy
       parameters:
       - name: entityTypeId
@@ -567,7 +567,7 @@ paths:
           description: Success
   /datastore/edm/property/type/{propertyTypeId}:
     get:
-      summary: Gets the PropertyType definition for the given PropertyType UUID.
+      summary: Gets the PropertyType definition for the given PropertyType UUID
       operationId: getPropertyType
       tags:
       - edm
@@ -589,7 +589,7 @@ paths:
               schema:
                 $ref: '#/components/propertyType'
     delete:
-      summary: Deletes the PropertyType definition for the given PropertyType UUID.
+      summary: Deletes the PropertyType definition for the given PropertyType UUID
       operationId: deletePropertyType
       tags:
       - edm
@@ -607,7 +607,7 @@ paths:
         '200':
           description: Success
     patch:
-      summary: Updates the PropertyType definition for the given PropertyType UUID with the given metadata.
+      summary: Updates the PropertyType definition for the given PropertyType UUID with the…
       operationId: updatePropertyTypeMetaData
       tags:
       - edm
@@ -632,7 +632,7 @@ paths:
           description: Success
   /datastore/edm/property/type/{propertyTypeId}/force:
     delete:
-      summary: Deletes the PropertyType definition for the given PropertyType UUID regardless of whether or not there is data associated with it.
+      summary: Deletes the PropertyType definition for the given PropertyType UUID regardless…
       operationId: forceDeletePropertyType
       tags:
       - edm
@@ -651,7 +651,7 @@ paths:
           description: Success
   /datastore/edm/ids/property/type/{namespace}/{name}:
     get:
-      summary: Gets the PropertyType UUID for the given PropertyType FQN.
+      summary: Gets the PropertyType UUID for the given PropertyType FQN
       operationId: getPropertyTypeId
       tags:
       - edm
@@ -679,7 +679,7 @@ paths:
                 format: uuid
   /datastore/edm/property/type/:
     get:
-      summary: Gets all PropertyType definitions.
+      summary: Gets all PropertyType definitions
       operationId: getAllPropertyTypes
       tags:
       - edm
@@ -696,7 +696,7 @@ paths:
                 items:
                   $ref: '#/components/propertyType'
     post:
-      summary: Creates a new PropertyType definition, if it doesn"t exist.
+      summary: Creates a new PropertyType definition, if it doesn"t exist
       operationId: createPropertyType
       tags:
       - edm
@@ -714,7 +714,7 @@ paths:
           description: Success
   /datastore/edm/property/type/namespace/{namespace}:
     get:
-      summary: Gets all PropertyType definitions under the given namespace.
+      summary: Gets all PropertyType definitions under the given namespace
       operationId: getAllPropertyTypesInNamespace
       tags:
       - edm
@@ -738,7 +738,7 @@ paths:
                   $ref: '#/components/propertyType'
   /datastore/edm/association/type/{associationTypeId}:
     get:
-      summary: Get the AssociationType definition for the given AssociationType UUID.
+      summary: Get the AssociationType definition for the given AssociationType UUID
       operationId: getAssociationType
       tags:
       - edm
@@ -760,7 +760,7 @@ paths:
               schema:
                 $ref: '#/components/associationType'
     delete:
-      summary: Delete the AssociationType definition for the given AssociationType UUID.
+      summary: Delete the AssociationType definition for the given AssociationType UUID
       operationId: deleteAssociationType
       tags:
       - edm
@@ -776,7 +776,7 @@ paths:
           description: Success
   /datastore/edm/association/type/{associationTypeId}/detailed:
     get:
-      summary: Get details about the AssociationType for the given AssociationType UUID.
+      summary: Get details about the AssociationType for the given AssociationType UUID
       operationId: getAssociationTypeDetails
       tags:
       - edm
@@ -799,7 +799,7 @@ paths:
                 $ref: '#/components/associationType'
   /datastore/edm/association/type/{associationTypeId}/available:
     get:
-      summary: Get all available associations for the given AssociationType UUID.
+      summary: Get all available associations for the given AssociationType UUID
       operationId: getAllAvailableAssociationTypes
       tags:
       - edm
@@ -824,7 +824,7 @@ paths:
                   $ref: '#/components/associationType'
   /datastore/edm/association/type/{associationTypeId}/dst/{entityTypeId}:
     put:
-      summary: Update the AssociationType dst entity types for the given AssociationType UUID by adding the given EntityType UUID.
+      summary: Update the AssociationType dst entity types for the given AssociationType UUID…
       operationId: addDstEntityTypeToAssociationType
       tags:
       - edm
@@ -848,7 +848,7 @@ paths:
         '200':
           description: Success
     delete:
-      summary: Updates the AssociationType dst entity types for the given AssociationType UUID by removing the given EntityType UUID.
+      summary: Updates the AssociationType dst entity types for the given AssociationType UUID…
       operationId: removeDstEntityTypeFromAssociationType
       tags:
       - edm
@@ -873,7 +873,7 @@ paths:
           description: Success
   /datastore/edm/association/type/{associationTypeId}/src/{entityTypeId}:
     put:
-      summary: Update the AssociationType src entity types for the given AssociationType UUID by adding the given EntityType UUID.
+      summary: Update the AssociationType src entity types for the given AssociationType UUID…
       operationId: addSrcEntityTypeToAssociationType
       tags:
       - edm
@@ -897,7 +897,7 @@ paths:
         '200':
           description: Success
     delete:
-      summary: Updates the AssociationType src entity types for the given AssociationType UUID by removing the given EntityType UUID.
+      summary: Updates the AssociationType src entity types for the given AssociationType UUID…
       operationId: removeSrcEntityTypeFromAssociationType
       tags:
       - edm
@@ -922,7 +922,7 @@ paths:
           description: Success
   /datastore/edm/summary:
     get:
-      summary: Get Property Usage Summary for all properties.
+      summary: Get Property Usage Summary for all properties
       operationId: getAllPropertyUsageSummaries
       tags:
       - edm
@@ -940,7 +940,7 @@ paths:
                   $ref: '#/components/propertyUsageSummary'
   /datastore/edm/summary/{propertyTypeId}:
     get:
-      summary: Get Property Usage Summary for property with given ID.
+      summary: Get Property Usage Summary for property with given ID
       operationId: getPropertyUsageSummary
       tags:
       - edm
@@ -965,7 +965,7 @@ paths:
                   $ref: '#/components/propertyUsageSummary'
   /datastore/edm/schema/{namespace}/{name}:
     get:
-      summary: Gets the schema contents for a corresponding namespace and name.
+      summary: Gets the schema contents for a corresponding namespace and name
       operationId: getSchemaContents
       tags:
       - edm
@@ -1000,7 +1000,7 @@ paths:
               schema:
                 $ref: '#/components/schema'
     put:
-      summary: Creates an empty schema, if it doesn't exist. If schema exists then no action is taken.
+      summary: Creates an empty schema, if it doesn't exist.
       operationId: createEmptySchema
       tags:
       - edm
@@ -1022,7 +1022,7 @@ paths:
         '200':
           description: Success
     patch:
-      summary: Edits the schema contents for a corresponding namespace and name.
+      summary: Edits the schema contents for a corresponding namespace and name
       operationId: updateSchema
       tags:
       - edm
@@ -1051,7 +1051,7 @@ paths:
           description: Success
   /datastore/edm/schema:
     get:
-      summary: Gets all schemas.
+      summary: Gets all schemas
       operationId: getSchemas
       tags:
       - edm
@@ -1068,7 +1068,7 @@ paths:
                 items:
                   $ref: '#/components/schema'
     post:
-      summary: Creates an empty schema, if it doesn't exist. If schema exists then no action is taken.
+      summary: Creates an empty schema, if it doesn't exist.
       operationId: createSchemaIfNotExists
       tags:
       - edm
@@ -1086,7 +1086,7 @@ paths:
           description: Success
   /datastore/edm/schema/{namespace}:
     get:
-      summary: Gets all schemas associated with a given namespace and accessible by the caller.
+      summary: Gets all schemas associated with a given namespace and accessible by the caller
       operationId: getSchemasInNamespace
       tags:
       - edm

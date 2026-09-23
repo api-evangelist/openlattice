@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   description: OpenLattice API
   version: 0.0.1
-  title: OpenLattice authorizations permissions API
+  title: OpenLattice Permissions API
   termsOfService: http://api.openlattice.com/terms/
   contact:
     email: support@openlattice.com
@@ -17,15 +17,15 @@ servers:
 - url: http://localhost:8080
   description: Local OpenLattice API
 tags:
-- name: permissions
+- name: Permissions
   description: API endpoints for permissions for organisations, roles and users.
 paths:
   /datastore/permissions:
     post:
-      summary: Get the ACL for the given ACL Key, only if the user is the owner of the ACL Key.
+      summary: Get the ACL for the given ACL Key, only if the user is the owner of the ACL Key
       operationId: getAcl
       tags:
-      - permissions
+      - Permissions
       security:
       - openlattice_auth: []
       - http_auth: []
@@ -45,10 +45,10 @@ paths:
               schema:
                 $ref: '#/components/acl'
     patch:
-      summary: Updates the ACL for a particular ACL Key, only if the user is the owner of the ACL Key.
+      summary: Updates the ACL for a particular ACL Key, only if the user is the owner of the…
       operationId: updateAcl
       tags:
-      - permissions
+      - Permissions
       security:
       - openlattice_auth: []
       - http_auth: []
