@@ -65,7 +65,7 @@ maintainers:
   email: info@apis.io
 apis:
 - aid: openlattice:openlattice-authorizations-api
-  name: OpenLattice authorizations API
+  name: OpenLattice Authorizations API
   description: The authorizations API from OpenLattice — 1 operation(s) for authorizations.
   humanURL: https://github.com/openlattice/api
   baseURL: https://api.openlattice.com
@@ -79,7 +79,7 @@ apis:
   - type: APIReference
     url: https://github.com/openlattice/api
 - aid: openlattice:openlattice-data-api
-  name: OpenLattice data API
+  name: OpenLattice Data API
   description: API endpoints to reading and writing data.
   humanURL: https://github.com/openlattice/api
   baseURL: https://api.openlattice.com
@@ -93,7 +93,7 @@ apis:
   - type: APIReference
     url: https://github.com/openlattice/api
 - aid: openlattice:openlattice-edm-api
-  name: OpenLattice edm API
+  name: OpenLattice Edm API
   description: API endpoints to the entity data model.
   humanURL: https://github.com/openlattice/api
   baseURL: https://api.openlattice.com
@@ -105,7 +105,7 @@ apis:
   - type: APIReference
     url: https://github.com/openlattice/api
 - aid: openlattice:openlattice-organizations-api
-  name: OpenLattice organizations API
+  name: OpenLattice Organizations API
   description: API endpoints related to organizations.
   humanURL: https://github.com/openlattice/api
   baseURL: https://api.openlattice.com
@@ -119,7 +119,7 @@ apis:
   - type: APIReference
     url: https://github.com/openlattice/api
 - aid: openlattice:openlattice-permissions-api
-  name: OpenLattice permissions API
+  name: OpenLattice Permissions API
   description: API endpoints for permissions for organisations, roles and users.
   humanURL: https://github.com/openlattice/api
   baseURL: https://api.openlattice.com
@@ -133,7 +133,7 @@ apis:
   - type: APIReference
     url: https://github.com/openlattice/api
 - aid: openlattice:openlattice-principal-api
-  name: OpenLattice principal API
+  name: OpenLattice Principal API
   description: The principal API from OpenLattice — 5 operation(s) for principal.
   humanURL: https://github.com/openlattice/api
   baseURL: https://api.openlattice.com
@@ -147,7 +147,7 @@ apis:
   - type: APIReference
     url: https://github.com/openlattice/api
 - aid: openlattice:openlattice-search-api
-  name: OpenLattice search API
+  name: OpenLattice Search API
   description: API endpoints to search data.
   humanURL: https://github.com/openlattice/api
   baseURL: https://api.openlattice.com
