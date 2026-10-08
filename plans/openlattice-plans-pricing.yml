@@ -59,3 +59,54 @@ rate_limit_statements:
 - 3,000 CI/CD minutes/month
 - 50,000 CI/CD minutes/month
 - up to 2,000 completions per month
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - hybrid
+  - metered
+  - seat
+  units:
+  - data
+  - seat
+  plans:
+  - name: Free
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Team
+    access: other
+    model: seat
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - month
+  - name: Enterprise
+    access: other
+    model: seat
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - month
+  - name: GitHub Codespaces add-on
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Git Large File Storage
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - month
