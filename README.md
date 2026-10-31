@@ -64,6 +64,129 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-OpenLattice is a company surfaced as a portfolio company of bullpen-capital and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+OpenLattice was a data-integration and analytics platform built around an Entity Data Model (EDM) — a graph of entity types, property types, association types, and EntitySets — with a fine-grained ACL permissions model over organizations, roles, and principals. It was adopted by public-sector and criminal-justice programs such as reentry case management, community work programs, childcare, and courts. The company's hosted service and website (openlattice.com, api.openlattice.com) no longer resolve, but its OpenAPI 3.0 specification (91 operations), multi-language SDKs, and React UI kit remain published under the github.com/openlattice organization, from which this profile was enriched.
 
-Backed by: bullpen-capital — https://openlattice.com/#
+**Areas:** Company · Data Integration · Entity Data Model · Public Sector · Analytics · Graph · Criminal Justice
+
+## OpenLattice on APIs.io
+
+Everything profiled for OpenLattice is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/openlattice/](https://apis.io/providers/openlattice/)** — or go straight to one of the APIs or properties below.
+
+### APIs (7)
+
+- [OpenLattice Authorizations API](https://apis.io/apis/openlattice/openlattice-authorizations-api/) — The authorizations API from OpenLattice — 1 operation(s) for authorizations.
+- [OpenLattice Data API](https://apis.io/apis/openlattice/openlattice-data-api/) — API endpoints to reading and writing data.
+- [OpenLattice Edm API](https://apis.io/apis/openlattice/openlattice-edm-api/) — API endpoints to the entity data model.
+- [OpenLattice Organizations API](https://apis.io/apis/openlattice/openlattice-organizations-api/) — API endpoints related to organizations.
+- [OpenLattice Permissions API](https://apis.io/apis/openlattice/openlattice-permissions-api/) — API endpoints for permissions for organisations, roles and users.
+- [OpenLattice Principal API](https://apis.io/apis/openlattice/openlattice-principal-api/) — The principal API from OpenLattice — 5 operation(s) for principal.
+- [OpenLattice Search API](https://apis.io/apis/openlattice/openlattice-search-api/) — API endpoints to search data.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [openlattice](https://apis.io/servers/openlattice/openlattice/)
+
+#### Collections (7)
+
+Postman and Open Collection request collections.
+
+- [OpenLattice authorizations API](https://apis.io/collections/openlattice/open-openlattice-authorizations-api/)
+- [OpenLattice authorizations data API](https://apis.io/collections/openlattice/open-openlattice-data-api/)
+- [OpenLattice authorizations edm API](https://apis.io/collections/openlattice/open-openlattice-edm-api/)
+- [OpenLattice authorizations organizations API](https://apis.io/collections/openlattice/open-openlattice-organizations-api/)
+- [OpenLattice authorizations permissions API](https://apis.io/collections/openlattice/open-openlattice-permissions-api/)
+- [OpenLattice authorizations principal API](https://apis.io/collections/openlattice/open-openlattice-principal-api/)
+- [OpenLattice authorizations search API](https://apis.io/collections/openlattice/open-openlattice-search-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Openlattice Openapi Overlay](https://apis.io/overlays/openlattice/openlattice-openapi-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Openlattice Authentication](https://apis.io/security/openlattice/openlattice-authentication/)
+- [Openlattice Domain Security](https://apis.io/security/openlattice/openlattice-domain-security/)
+
+#### Plans and pricing (2)
+
+Published plans, tiers and prices.
+
+- [Openlattice Plans Pricing](https://apis.io/plans/openlattice/openlattice-plans-pricing/)
+- [Openlattice Price Estimates](https://apis.io/plans/openlattice/openlattice-price-estimates/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Openlattice Rate Limits](https://apis.io/rate-limits/openlattice/openlattice-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://github.com/openlattice)
+- [Pricing](https://github.com/pricing)
+- [GitHub](https://github.com/openlattice)
+
+## API Evangelist rating
+
+**Kin Score 31.8** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 39.8 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 28.0 |
+| Access clarity | 42.1 |
+
+**Agent readiness 18.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/openlattice/](https://apis.io/providers/openlattice/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for OpenLattice: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/openlattice/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
